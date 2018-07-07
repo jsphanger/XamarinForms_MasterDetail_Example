@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms" 
+                  xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+                  xmlns:local="clr-namespace:MasterDetailExample.Views;assembly=MasterDetailExample"
+                  x:Class="MasterDetailExample.Views.MasterDetail">
+
+    <MasterDetailPage.Master>
+        <!-- Can declare the content page here or use a local to point to a seperate page -->
+        <ContentPage Title="Menu" Padding="20">
+            <StackLayout Orientation="Vertical">
+                <Label x:Name="lblMenuTitle" Text="Main Menu" />
+                <Button x:Name="btnMain" Text="Home" Clicked="MenuClick" CommandParameter="1" />
+                <Button x:Name="btnContacts" Text="Contacts" Clicked="MenuClick" CommandParameter="2" />
+                <Button x:Name="btnAbout" Text="About" Clicked="MenuClick" CommandParameter="3" />
+            </StackLayout>
+        </ContentPage>
+    </MasterDetailPage.Master>
+    
+    <MasterDetailPage.Detail>
+        <NavigationPage>
+            <x:Arguments>
+                <local:MainLanding />
+            </x:Arguments>
+        </NavigationPage>
+    </MasterDetailPage.Detail>
+    
+</MasterDetailPage>
